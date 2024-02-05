@@ -15,7 +15,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {token ? (
+        {token ? (  
           <>
           <Route path='/' element={<Dashboard user={user} />} />
             <Route path='/dashboard' element={<Dashboard user={user} />} />
