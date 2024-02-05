@@ -1,0 +1,176 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+}
+
+body {
+  background-image: url("https://img.freepik.com/free-photo/construction-illustration-city-skyline_53876-103044.jpg");
+}
+
+/* Login */
+.log-main{
+  margin-top: 20%;
+  border: 2px solid rgb(59, 200, 200);
+  border-radius: 20px;
+  width: 70%;
+  margin-left: 15%;
+  padding: 20px;
+  background-color: white;
+
+}
+
+  .s-button{
+    padding: 5px;
+    width: 20%;
+    color: rgb(59, 200, 200);
+    background-color: aqua;
+    margin-bottom: 20px;
+    border-radius: 20px;
+  }
+  .s-button:hover{
+    background-color: aquamarine;
+  }
+
+  .log-lab{
+    font-weight: bolder;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+
+  .login-input{
+    border: 2px solid rgb(59, 200, 200);
+    border-radius: 20px;
+    padding: 2px;
+  }
+
+  /* Register */
+
+  .reg-main{
+    border: 2px solid rgb(59, 200, 200);
+    border-radius: 20px;
+    margin: 10%;
+    margin-left: 10%;
+    width: 80%;
+    padding: 40px;
+  }
+
+  /* Display All */
+  
+  .main-nav{
+    background-color: rgb(59, 200, 200);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+  }
+
+  .nav-home{
+    font-size: xx-large;
+    color: black;
+    text-decoration: none;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+
+  .nav-btn-holder{
+    width: 20%;
+  }
+
+  .custom-color{
+    color: black;
+    border: 2px solid black;
+    background-color: aliceblue;
+  }
+
+  .card{
+    width: 80%;
+    margin: 30px 10% ;
+    border: 2px solid rgb(59, 200, 200);
+    padding: 20px;
+  }
+
+  .card-text{
+    width: 50%;
+  }
+
+  .card-text-add .card-text-desc{
+    max-width: 90%;
+  }
+  .card-title{
+    font-size: xx-large;
+    text-decoration: none;
+    color:rgb(59, 200, 200);
+  }
+
+  /* Create */
+
+  .create-main{
+    border: 2px solid rgb(59, 200, 200);
+    border-radius: 20px;
+    margin: 5% 30px;
+    padding: 20px;
+    background-color: white
+  }
+
+  .btn-div-create{
+    margin: 10px 10%;
+  }
+
+  /* Single Post */
+
+  .single-main{
+    margin-top: 10%;
+    padding: 20px;
+    border: 2px solid rgb(59, 200, 200);
+    border-radius: 20px;
+    width: 80%;
+    margin-left:10%;
+    padding: 20px;
+    background-color: white;
+  
+  }
+
+  .single-card-text{
+    margin-left: 10%;
+  }
+
+  .single-map{
+    margin-left:10% ;
+    margin-top: 20px;
+    border: 1px solid rgb(59, 200, 200);
+  }
+
+  .single-card-img{
+    height: 30%;
+    width: 40%;
+    border-radius: 20px;
+  }
+
+
+  /* Edit */
+  .btn-delete{
+    border: 2px solid rgb(128, 12, 12);
+    background-color: red;
+    color: white;
+    width: max-content;
+    padding: 5px 15px;
+  }
+
+  /* welcome page */
+
+  .welcome-page{
+    width: 40%;
+    border: 2px solid rgb(59, 200, 200);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    margin-top: 15%;
+    margin-left: 30%;
+    background-color: white
+    }
+
+    .wel-log{
+      text-decoration: none;
+      color: rgb(59, 200, 200);
+      font-size: xx-large;
+    }
