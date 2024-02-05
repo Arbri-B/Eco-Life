@@ -5,7 +5,7 @@ const Dashboard = () => {
     return(
         <>
         <Navbar/>
-        <h1>Dashboard ver 1.0</h1>
+        <h1>Dashboard ver 2.0</h1>
         </>
     )
 }
