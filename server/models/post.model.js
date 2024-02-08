@@ -26,6 +26,13 @@ const PostSchema = new mongoose.Schema({
         type: String,
         required: [true, "The image URL is required"],
     },
+    participants: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+    }],
+    startTime: {
+        type: String, 
+    },
     userId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',

@@ -7,6 +7,7 @@ const CreateEvent = (props) => {
     const navigate = useNavigate();
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
+    const [startTime, setStartTime] = useState("")
     const [address, setAddress] = useState("");
     const [imageUrl, setImageUrl] = useState("");
     const userId = localStorage.getItem('userId');
@@ -26,6 +27,7 @@ const CreateEvent = (props) => {
                 console.log(
                     title,
                     address,
+                    startTime,
                     description,
                     imageUrl,
                     userId,
@@ -33,6 +35,7 @@ const CreateEvent = (props) => {
                 axios.post('http://localhost:8000/api/post', {
                     title,
                     address,
+                    startTime,
                     description,
                     imageUrl,
                     userId,
@@ -50,10 +53,10 @@ const CreateEvent = (props) => {
 
     return (
         <div className="px-3 create-main">
-            
+
             <h1 className="text-center p-2">Create an Event</h1>
             {errorMessage && <p className="text-danger text-center">{errorMessage}</p>}
-            
+
             <form className="w-75 m-auto" onSubmit={(e) => createEvent(e)}>
                 <div>
                     <label className="form-label">Title :</label>
@@ -70,6 +73,19 @@ const CreateEvent = (props) => {
                     }
                 </div>
                 <div>
+                    <label htmlFor="start">Start date:</label>
+
+                    <input
+                        type="datetime-local"
+                        id="start"
+                        name="trip-start"
+                        value={startTime ? startTime : ""}
+                        min="2024-01-01T00:00"
+                        max="2024-12-31T23:59"
+                        onChange={(e) => setStartTime(e.target.value)}
+                    />
+                </div>
+                <div>
                     <label className="form-label">Description :</label>
                     <textarea className="form-control" value={description} onChange={(e) => setDescription(e.target.value)} />
                     {description.length > 0 && description.length < 5 &&
@@ -77,13 +93,13 @@ const CreateEvent = (props) => {
                     }
                 </div>
                 <div>
-                        <label className="form-label">Image URL: </label>
-                        <input className="form-control" type="text" value={imageUrl} onChange={(e) => setImageUrl(e.target.value)} placeholder="URL goes here" pattern="https?://.+"
-                            title="Include http:// or https:// in the URL" />
-                    </div>
-                    <div className="d-flex justify-content-between btn-div-create">
-                <button className="btn btn-outline-primary customColor mt-2 s-button">Create the Event</button>
-                <p className="s-button mt-2 btn-outline-primary " onClick={navigateBack}> Cancel </p>
+                    <label className="form-label">Image URL: </label>
+                    <input className="form-control" type="text" value={imageUrl} onChange={(e) => setImageUrl(e.target.value)} placeholder="URL goes here" pattern="https?://.+"
+                        title="Include http:// or https:// in the URL" />
+                </div>
+                <div className="d-flex justify-content-between btn-div-create">
+                    <button className="btn btn-outline-primary customColor mt-2 s-button">Create the Event</button>
+                    <p className="s-button mt-2 btn-outline-primary " onClick={navigateBack}> Cancel </p>
                 </div>
             </form>
         </div>

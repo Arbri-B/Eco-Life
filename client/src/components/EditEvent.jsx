@@ -78,7 +78,7 @@ const EditEvent = (props) => {
                 withCredentials: true
             })
                 .then(res => {
-                    navigate('/posts')
+                    navigate('/events')
                 })
                 .catch(err => console.log(err))
         }

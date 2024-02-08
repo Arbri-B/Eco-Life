@@ -9,5 +9,6 @@ module.exports = (app) => {
     app.get('/api/post/:id',authenticate, PostController.getOnePost);
     app.put('/api/post/:id',authenticate, PostController.getOnePostAndUpdate);
     app.delete('/api/post/:id',authenticate, PostController.deletePost);
+    app.post('/api/post/confirm-participation/:id', authenticate, PostController.confirmParticipation);
     // app.patch('/api/post/:id', authenticate, PostController.getOnePostAndUpdate);
 }

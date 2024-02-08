@@ -2,10 +2,10 @@ const Post = require('../models/post.model');
 
 async function getLatLongFromAddress(address) {
     try {
-        const apiKey = 'AIzaSyDNOnnW2lR3qZJqjZ8ZO2w4K0ajm-zmyGA'; 
+        const apiKey = 'AIzaSyDNOnnW2lR3qZJqjZ8ZO2w4K0ajm-zmyGA';
         const apiUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(address)}&key=${apiKey}`;
 
-            const response = await fetch(apiUrl);
+        const response = await fetch(apiUrl);
 
         if (!response.ok) {
             throw new Error('Error fetching geocoding data');
@@ -52,6 +52,41 @@ module.exports.getAllPosts = (req, res) => {
         });
 }
 
+module.exports.confirmParticipation = async (req, res) => {
+    const postId = req.params.id;
+    const userId = req.body.userId;
+
+    try {
+        const post = await Post.findById(postId);
+
+        if (!post) {
+            return res.status(404).json({
+                error: 'Post not found'
+            });
+        }
+
+        if (post.participants.includes(userId)) {
+            return res.status(400).json({
+                error: 'User already confirmed participation'
+            });
+        }
+
+        post.participants.push(userId);
+        post.participantsCount = post.participants.length;
+
+        await post.save();
+
+        res.json({
+            post
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({
+            error: 'Internal Server Error'
+        });
+    }
+};
+
 module.exports.getTopThreePosts = (req, res) => {
     Post.find().sort({
             votesCount: -1
@@ -95,6 +130,7 @@ module.exports.createPost = async (req, res) => {
         title: req.body.title,
         address: req.body.address,
         description: req.body.description,
+        startTime: req.body.startTime,
         lat: coordinates.lat,
         long: coordinates.long,
         imageUrl: req.body.imageUrl,
