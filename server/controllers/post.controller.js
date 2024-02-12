@@ -72,7 +72,6 @@ module.exports.confirmParticipation = async (req, res) => {
         }
 
         post.participants.push(userId);
-        post.participantsCount = post.participants.length;
 
         await post.save();
 

@@ -1,11 +1,14 @@
-import Navbar from "../components/Navbar";
+
 import Footer from "../components/Footer";
+import { Link } from "react-router-dom";
+import TopBar from "../components/NavTop";
+import { FaAddressBook, FaEnvelope, FaPhone } from "react-icons/fa";
 
 const Dashboard = () => {
 
     return (
         <>
-            <Navbar />
+            <TopBar />
             <div className="app-container">
 
                 <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
@@ -15,23 +18,23 @@ const Dashboard = () => {
                         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
                     </div>
                     <div className="carousel-item active">
-                        <img src="https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg" className="d-block w-100" alt="First Slide" />
+                        <img src="https://miro.medium.com/v2/resize:fit:750/1*-PCwcSZBQKJpHg3uumHEmQ.jpeg" className="d-block w-100" alt="First Slide" />
                         <div className="carousel-caption d-none d-md-block">
                             <h2 >Welcome to <span>Green</span></h2>
                             <p >Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-                            <button class="btn-get-started animate__animated animate__fadeInUp scrollto" >Read More</button>
+                            <Link to="/zero" className="btn-get-started animate_animated animate_fadeInUp scrollto">Read More</Link>
                         </div>
                     </div>
                     <div className="carousel-item">
-                        <img src="https://images.ctfassets.net/hrltx12pl8hq/3Z1N8LpxtXNQhBD5EnIg8X/975e2497dc598bb64fde390592ae1133/spring-images-min.jpg" className="d-block w-100" alt="Second Slide" />
+                        <img src="https://media.licdn.com/dms/image/D5612AQG165WkQ2h95Q/article-cover_image-shrink_600_2000/0/1705389677752?e=2147483647&v=beta&t=InYGjjmj4ARlD7htYTt_RCpgSHYVuFsfFWqdXlgkkPw" className="d-block w-100" alt="Second Slide" />
                         <div className="carousel-caption d-none d-md-block">
                             <h2 >Welcome to <span>Green</span></h2>
                             <p >Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-                            <button class="btn-get-started animate__animated animate__fadeInUp scrollto" >Read More</button>
+                            <Link to="/eco" className="btn-get-started animate_animated animate_fadeInUp scrollto">Read More</Link>
                         </div>
                     </div>
                     <div className="carousel-item">
-                        <img src="https://www.befunky.com/images/prismic/82e0e255-17f9-41e0-85f1-210163b0ea34_hero-blur-image-3.jpg?auto=avif,webp&format=jpg&width=896" className="d-block w-100" alt="Third Slide" />
+                        <img src="https://stateofgreen.com/en/wp-content/uploads/2018/05/news_largepicture_12191_1200x320_5971be357af94.jpg" className="d-block w-100" alt="Third Slide" />
                         <div className="carousel-caption d-none d-md-block">
                             <h2 >Welcome to <span>Green</span></h2>
                             <p >Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
@@ -50,9 +53,23 @@ const Dashboard = () => {
                 </button>
             </div>
 
+            <section id="cta" className="cta mt-5">
+                <div className="container">
 
+                    <div className="row">
+                        <div className="col-lg-9 text-center text-lg-start">
+                            <h3>Join Our Newsletter</h3>
+                            <p>    Stay informed and be part of our community! Subscribe to our newsletter to receive updates on the latest news, exclusive offers, and eco-friendly tips directly to your inbox.</p>
+                        </div>
+                        <div className="col-lg-3 cta-btn-container text-center">
+                            <a className="cta-btn align-middle" href="#">Subscribe</a>
+                        </div>
+                    </div>
 
-            <section id="contact" className="contact">
+                </div>
+            </section>
+
+            <section id="contact" className="contact mt-3">
                 <div className="container">
 
                     <div className="section-title">
@@ -65,23 +82,24 @@ const Dashboard = () => {
                         <div className="col-lg-5 d-flex align-items-stretch">
                             <div className="info">
                                 <div className="address">
-                                    <i className="bi bi-geo-alt"></i>
+                                    <FaAddressBook className='icon mt-2' />
                                     <h4>Location:</h4>
-                                    <p>Sheshi Wilson</p>
+                                    <p>Tirane , Albania</p>
                                 </div>
 
                                 <div className="email">
-                                    <i clclassNamess="bi bi-envelope"></i>
                                     <h4>Email:</h4>
+                                    <FaEnvelope className='icon' />
                                     <p>info@example.com</p>
                                 </div>
 
                                 <div className="phone">
-                                    <i className="bi bi-phone"></i>
+                                    <FaPhone className='icon mt-2' />
                                     <h4>Call:</h4>
-                                    <p>+1 5589 55488 55s</p>
+                                    <p>+555 555 55 5555</p>
                                 </div>
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2996.5520257768208!2d19.812418725530357!3d41.31860810025955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135030fd8a4bda59%3A0x4a4e2d768dd15590!2sSheshi%20Uillson%2C%20Tirana%2C%20Albania!5e0!3m2!1sen!2s!4v1707404152872!5m2!1sen!2s" style={{ border: '0', width: '100%', height: '290px' }} allowfullscreen></iframe>
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47934.0659648627!2d19.776537970314195!3d41.33324177336964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1350310470fac5db%3A0x40092af10653720!2sTirana%2C%20Albania!5e0!3m2!1sen!2s!4v1707511389520!5m2!1sen!2s" frameBorder="0"
+                                    style={{ border: '0', width: '100%', height: '290px' }} allowFullScreen></iframe>
                             </div>
 
                         </div>

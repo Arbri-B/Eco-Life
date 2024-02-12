@@ -12,6 +12,8 @@ import DisplayOne from './components/SingleEvent';
 import Events from './components/Events';
 import { AuthProvider, useAuth } from './AuthContext';
 import WelcomePage from './views/WelcomePage';
+import Eco from './components/Eco';
+import Zero from './components/Zero';
 
 function App() {
   const { user } = useAuth();
@@ -27,6 +29,8 @@ function App() {
             <Route path='/event/:id' element={<DisplayOne user={user} />} />
             <Route path='/event/new' element={<CreateEvent user={user} />} />
             <Route path='/event/edit/:id' element={<EditEvent user={user} />} />
+            <Route path='/eco' element={<Eco user={user} />} />
+            <Route path='/zero' element={<Zero user={user} />} />
 
 
           </>

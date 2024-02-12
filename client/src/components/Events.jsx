@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from 'axios'
 import { useAuth } from '../AuthContext';
-import Navbar from "./Navbar";
+import TopBar from "./NavTop";
 
 const Events = (props) => {
     const [posts, setPosts] = useState([])
@@ -26,7 +26,7 @@ const Events = (props) => {
 
     return (
         <>
-        <Navbar/>
+        <TopBar/>
         <div className="all-main">
 
             <div className="row all-main">

@@ -3,7 +3,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { AuthProvider } from "../AuthContext";
 import axios from "axios";
 import { GoogleMap, useLoadScript, MarkerF } from "@react-google-maps/api";
-import Navbar from "./Navbar";
+import TopBar from "./NavTop";
 
 const DisplayOne = (props) => {
     const [post, setPost] = useState({});
@@ -25,7 +25,8 @@ const DisplayOne = (props) => {
     
             const response = await axios.post(`http://localhost:8000/api/post/confirm-participation/${id}`, {
                 userId: userId,
-            });
+            }, { withCredentials : true}
+            );
     
             // Update local state with the new post data (including participants count)
             setPost(response.data.post);
@@ -58,7 +59,7 @@ const DisplayOne = (props) => {
 
     return (
         <>
-        <Navbar/>
+        <TopBar/>
         <div className="single-main">
             <div className=" single-card d-flex justify-content-between align-items-center">
                 <div className="single-card-text">
