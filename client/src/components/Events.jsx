@@ -31,10 +31,11 @@ const Events = (props) => {
             {posts.length > 0 ? (
               posts.map((post, index) => {
                 return (
-                  <div key={index} class="col-lg-4">
-                    <div class="portfolio-info">
+                  <div key={index} className="col-lg-4">
+                    <div className="portfolio-info">
                       <h3>Event information</h3>
-                      <ul>
+                      <ul >
+                      <div className="d-flex flex-column align-items-start">
                         <li>
                           <strong>Category</strong>{" "}
                           <Link
@@ -50,6 +51,7 @@ const Events = (props) => {
                         <li>
                           <strong>Event date</strong>: {post.startTime}
                         </li>
+                        </div>
                         <li>
                           {" "}
                           <img
