@@ -27,11 +27,11 @@ const Events = (props) => {
       <TopBar />
       <div className="portfolio-details">
         <div className="row all-main">
-          <div className="col d-flex flex-wrap ">
+          <div className="col d-flex flex-wrap justify-content-around ">
             {posts.length > 0 ? (
               posts.map((post, index) => {
                 return (
-                  <div key={index} className="col-lg-4">
+                  <div key={index} className="col-lg-5 ">
                     <div className="portfolio-info">
                       <h3>Event information</h3>
                       <ul >
