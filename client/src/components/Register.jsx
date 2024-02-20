@@ -37,11 +37,11 @@ const Register = () => {
                 <h2>Create an account</h2>
                 <div className='d-flex justify-content-between m-3'>
                     <label className='log-lab'>First Name:</label>
-                    <input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
+                    <input type="text"  className='log-put' value={firstName} onChange={(e) => setFirstName(e.target.value)} />
                 </div>
                 <div className='d-flex justify-content-between m-3'>
                     <label className='log-lab'>Last Name:</label>
-                    <input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} />
+                    <input type="text"  className='log-put' value={lastName} onChange={(e) => setLastName(e.target.value)} />
                 </div>
                 <div className='d-flex justify-content-between m-3'>
                     <label className='log-lab'>Email:</label>
@@ -49,7 +49,7 @@ const Register = () => {
                 </div>
                 <div className='d-flex justify-content-between m-3'>
                     <label className='log-lab'>Password:</label>
-                    <input type="text" value={password} onChange={(e) => setPassword(e.target.value)} />
+                    <input type="text"  className='log-put' value={password} onChange={(e) => setPassword(e.target.value)} />
                 </div>
                 <div className='d-flex justify-content-between m-3'>
                     <label className='log-lab'>Confirm Password:</label>
