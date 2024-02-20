@@ -1,4 +1,5 @@
 const Post = require('../models/post.model');
+const moment = require('moment');
 
 async function getLatLongFromAddress(address) {
     try {
@@ -33,24 +34,31 @@ async function getLatLongFromAddress(address) {
     }
 }
 
-module.exports.getAllPosts = (req, res) => {
-    Post.find().sort({
-            createdAt: -1
-        })
-        .then((allPosts) => {
+module.exports.getAllPosts = async (req, res) => {
+    try {
+        const allPosts = await Post.find().populate('participants').exec();
 
-            res.json({
-                posts: allPosts
-            })
-        })
-        .catch((err) => {
-            console.log(err)
-            res.json({
-                message: 'Something went wrong',
-                error: err
-            })
+        // Calculate time remaining for each post and add a new property 'timeRemaining'
+        allPosts.forEach(post => {
+            const currentTime = moment();
+            const startTime = moment(post.startTime);
+            post.timeRemaining = startTime.diff(currentTime, 'minutes');
         });
-}
+
+        // Sort the posts based on timeRemaining in ascending order
+        const sortedPosts = allPosts.sort((a, b) => a.timeRemaining - b.timeRemaining);
+
+        res.json({
+            posts: sortedPosts
+        });
+    } catch (err) {
+        console.log(err);
+        res.json({
+            message: 'Something went wrong',
+            error: err
+        });
+    }
+};
 
 module.exports.confirmParticipation = async (req, res) => {
     const postId = req.params.id;

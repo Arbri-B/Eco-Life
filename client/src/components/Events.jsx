@@ -42,6 +42,7 @@ const Events = (props) => {
                                             <Link className="card-title" to={`/event/${post._id}`}>{post.title}</Link>
                                             <p>Hello</p>
                                             <h6 className="card-subtitle mb-2 text-muted"></h6>
+                                            <p>Start time {post.startTime}</p>
                                             <p className="card-text-add">{post.address}</p>
                                             <p className="card-text-desc">{post.description}</p>
                                             {

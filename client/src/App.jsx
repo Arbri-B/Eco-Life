@@ -14,10 +14,16 @@ import { AuthProvider, useAuth } from './AuthContext';
 import WelcomePage from './views/WelcomePage';
 import Eco from './components/Eco';
 import Zero from './components/Zero';
+import { useJsApiLoader } from '@react-google-maps/api';
+import Calculate from './components/Calculate';
 
 function App() {
   const { user } = useAuth();
   const token = localStorage.getItem('token');
+  // const { isLoaded} =useJsApiLoader({
+  //   googleMapsApiKey : "AIzaSyDNOnnW2lR3qZJqjZ8ZO2w4K0ajm-zmyGA",
+  //   libraries: ['places'],
+  // })
   return (
     <BrowserRouter>
       <Routes>
@@ -31,6 +37,7 @@ function App() {
             <Route path='/event/edit/:id' element={<EditEvent user={user} />} />
             <Route path='/eco' element={<Eco user={user} />} />
             <Route path='/zero' element={<Zero user={user} />} />
+            <Route path='/calculate' element={<Calculate user={user} />} />
 
 
           </>

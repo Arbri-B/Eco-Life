@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { AuthProvider } from "../AuthContext";
 import axios from "axios";
-import { GoogleMap, useLoadScript, MarkerF } from "@react-google-maps/api";
+import { GoogleMap, useLoadScript, MarkerF} from "@react-google-maps/api";
 import TopBar from "./NavTop";
 
 const DisplayOne = (props) => {

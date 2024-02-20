@@ -31,8 +31,8 @@ const TopBar = () => {
                         <ul>
                             
                             <li><Link className="nav-link scrollto active" to={`/`}>Home</Link></li>
-                            <li><a class="nav-link scrollto" href="#about">About</a></li>
-                            <li><a class="nav-link scrollto" href="#team">Team</a></li>
+                            <li><Link className="nav-link scrollto active" to={`/events`}>Events</Link></li>
+                            <li><Link className="nav-link scrollto active" to={`/calculate`}>Calculate</Link></li>
                             <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
                                 <ul>
                                     <li><a href="#">Drop Down 1</a></li>

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from 'axios';
 import { useAuth } from '../AuthContext';
+import {  GoogleMap, Autocomplete, useLoadScript,  } from "@react-google-maps/api";
 
 const CreateEvent = (props) => {
     const navigate = useNavigate();
@@ -12,6 +13,11 @@ const CreateEvent = (props) => {
     const [imageUrl, setImageUrl] = useState("");
     const userId = localStorage.getItem('userId');
     const [errorMessage, setErrorMessage] = useState("");
+
+    const { isLoaded, loadError } = useLoadScript({
+        googleMapsApiKey: "AIzaSyDNOnnW2lR3qZJqjZ8ZO2w4K0ajm-zmyGA",
+        libraries:['places']
+    });
 
     const navigateBack = () => {
         navigate(-1);
@@ -51,6 +57,9 @@ const CreateEvent = (props) => {
         }
     };
 
+    if (loadError) return "Error loading maps";
+    if (!isLoaded) return "Loading maps";
+
     return (
         <div className="px-3 create-main">
 
@@ -67,10 +76,13 @@ const CreateEvent = (props) => {
                 </div>
                 <div>
                     <label className="form-label">Address :</label>
-                    <textarea className="form-control" value={address} onChange={(e) => setAddress(e.target.value)} />
+                    <Autocomplete>
+                    <input className="form-control" value={address} onChange={(e) => setAddress(e.target.value)} />
+                    </Autocomplete>
                     {address.length > 0 && address.length < 5 &&
                         <p className="text-danger">The address should be 5 characters or longer</p>
                     }
+
                 </div>
                 <div>
                     <label htmlFor="start">Start date:</label>
