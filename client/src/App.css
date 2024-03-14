@@ -1,5 +1,5 @@
 #root {
-  max-width: 1280px;
+  max-width: auto;
   margin: 0 auto;
   text-align: center;
   width: 100%;
@@ -58,9 +58,7 @@ background: linear-gradient(180deg, rgb(255, 255, 255) 20%, rgba(164,244,148,1) 
 
   /* Display All */
 
-  .all-main{
-    margin-top: 10%;
-  }
+ 
   .main-nav{
     background-color: rgb(114, 212, 129);
     padding: 20px;
@@ -148,8 +146,9 @@ background: linear-gradient(180deg, rgb(255, 255, 255) 20%, rgba(164,244,148,1) 
   }
 
   .single-card-img{
-    height: 30%;
-    width: 40%;
+
+    height: 100%;
+    width: 100%;
     border-radius: 20px;
   }
 
@@ -987,3 +986,78 @@ p {
     display: inline-block;
   }
 }
+
+
+.log-put{
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+
+/*--------------------------------------------------------------
+# Portfolio Details
+--------------------------------------------------------------*/
+
+
+.portfolio-details .portfolio-details-slider img {
+  width: 100%;
+}
+
+.portfolio-details .portfolio-details-slider .swiper-pagination {
+  margin-top: 20px;
+  position: relative;
+}
+
+.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  opacity: 1;
+  border: 1px solid #5cb874;
+}
+
+.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #5cb874;
+}
+
+.portfolio-details .portfolio-info {
+  padding: 30px;
+  box-shadow: 0px 0 30px rgba(34, 34, 34, 0.08);
+
+  margin-top: 20px;
+}
+
+.portfolio-details .portfolio-info h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.portfolio-details .portfolio-info ul {
+  list-style: none;
+  padding: 0;
+  font-size: 15px;
+}
+
+.portfolio-details .portfolio-info ul li+li {
+  margin-top: 10px;
+}
+
+.portfolio-details .portfolio-description {
+  padding-top: 30px;
+}
+
+.portfolio-details .portfolio-description h2 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.portfolio-details .portfolio-description p {
+  padding: 0;
+}
+
+
+.event-el{margin-left: 20px;}

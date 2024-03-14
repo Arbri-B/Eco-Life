@@ -20,40 +20,25 @@ const TopBar = () => {
 
     return (
         <>
-            <header id="header" class="d-flex align-items-center">
-                <div class="container d-flex align-items-center">
+            <header id="header" className="d-flex align-items-center">
+                <div className="container d-flex align-items-center">
 
-                    <h1 class="logo me-auto"><Link to={'/'}>Green</Link></h1>
+                    <h1 className="logo me-auto"><Link to={'/'}>Green</Link></h1>
 
-                    <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid" /></a>
+                    <a href="index.html" className="logo me-auto"><img src="assets/img/logo.png" alt="" className="img-fluid" /></a>
 
-                    <nav id="navbar" class="navbar">
+                    <nav id="navbar" className="navbar">
                         <ul>
                             
                             <li><Link className="nav-link scrollto active" to={`/`}>Home</Link></li>
                             <li><Link className="nav-link scrollto active" to={`/events`}>Events</Link></li>
                             <li><Link className="nav-link scrollto active" to={`/calculate`}>Calculate</Link></li>
-                            <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-                                <ul>
-                                    <li><a href="#">Drop Down 1</a></li>
-                                    <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                                        <ul>
-                                            <li><a href="#">Deep Drop Down 1</a></li>
-                                            <li><a href="#">Deep Drop Down 2</a></li>
-                                            <li><a href="#">Deep Drop Down 3</a></li>
-                                            <li><a href="#">Deep Drop Down 4</a></li>
-                                            <li><a href="#">Deep Drop Down 5</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Drop Down 2</a></li>
-                                    <li><a href="#">Drop Down 3</a></li>
-                                    <li><a href="#">Drop Down 4</a></li>
-                                </ul>
-                            </li>
+                            
+                          
                             <li><Link className="getstarted scrollto" to={'/event/new'}>Create event</Link></li>
-                            <li><button class="getstarted scrollto" onClick={handleLogout}>Logout</button></li>
+                            <li><button className="getstarted scrollto" onClick={handleLogout}>Logout</button></li>
                         </ul>
-                        <i class="bi bi-list mobile-nav-toggle"></i>
+                        <i className="bi bi-list mobile-nav-toggle"></i>
                     </nav>
 
                 </div>

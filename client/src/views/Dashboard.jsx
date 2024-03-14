@@ -20,16 +20,18 @@ const Dashboard = () => {
                     <div className="carousel-item active">
                         <img src="https://miro.medium.com/v2/resize:fit:750/1*-PCwcSZBQKJpHg3uumHEmQ.jpeg" className="d-block w-100" alt="First Slide" />
                         <div className="carousel-caption d-none d-md-block">
-                            <h2 >Welcome to <span>Green</span></h2>
-                            <p >Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+                            <h2 >Zero-Waste<span>Lifestyles</span></h2>
+                            <p >Zero-waste living is a philosophy that encourages
+                                    individuals to minimize their production of waste</p>
                             <Link to="/zero" className="btn-get-started animate_animated animate_fadeInUp scrollto">Read More</Link>
                         </div>
                     </div>
                     <div className="carousel-item">
                         <img src="https://media.licdn.com/dms/image/D5612AQG165WkQ2h95Q/article-cover_image-shrink_600_2000/0/1705389677752?e=2147483647&v=beta&t=InYGjjmj4ARlD7htYTt_RCpgSHYVuFsfFWqdXlgkkPw" className="d-block w-100" alt="Second Slide" />
                         <div className="carousel-caption d-none d-md-block">
-                            <h2 >Welcome to <span>Green</span></h2>
-                            <p >Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+                            <h2 >Eco-Friendly <span>Transportation</span></h2>
+                            <p >Eco-friendly transportation solutions represent a shift
+                                    towards sustainable mobility</p>
                             <Link to="/eco" className="btn-get-started animate_animated animate_fadeInUp scrollto">Read More</Link>
                         </div>
                     </div>
