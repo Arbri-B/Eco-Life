@@ -1061,3 +1061,8 @@ p {
 
 
 .event-el{margin-left: 20px;}
+
+.chat-input{
+  border: 2px solid black;
+  border-radius: 7px;
+}

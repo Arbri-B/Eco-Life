@@ -33,8 +33,9 @@ const TopBar = () => {
                             <li><Link className="nav-link scrollto active" to={`/`}>Home</Link></li>
                             <li><Link className="nav-link scrollto active" to={`/events`}>Events</Link></li>
                             <li><Link className="nav-link scrollto active" to={`/calculate`}>Calculate</Link></li>
+                            <li><Link className="nav-link scrollto active" to={`/chatform`}>Chatroom</Link></li>
                             
-                          
+
                             <li><Link className="getstarted scrollto" to={'/event/new'}>Create event</Link></li>
                             <li><button className="getstarted scrollto" onClick={handleLogout}>Logout</button></li>
                         </ul>

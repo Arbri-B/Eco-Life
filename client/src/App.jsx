@@ -14,8 +14,11 @@ import { AuthProvider, useAuth } from './AuthContext';
 import WelcomePage from './views/WelcomePage';
 import Eco from './components/Eco';
 import Zero from './components/Zero';
+import Form from './components/Form';
+import Chatroom from './components/Chatroom';
 import { useJsApiLoader } from '@react-google-maps/api';
 import Calculate from './components/Calculate';
+import io from 'socket.io-client';
 
 function App() {
   const { user } = useAuth();
@@ -24,6 +27,35 @@ function App() {
   //   googleMapsApiKey : "AIzaSyDNOnnW2lR3qZJqjZ8ZO2w4K0ajm-zmyGA",
   //   libraries: ['places'],
   // })
+
+  const [socket] = useState(() => io(':8000'));
+  const [isConnected, setIsConnected] = useState(socket.connected);
+  const [username, setUsername] = useState('');
+
+  useEffect(() => {
+    console.log('Running');
+    const socket = io(':8000');
+
+    const handleConnect = () => {
+      console.log('Connected');
+      setIsConnected(true);
+    };
+
+    const handleDisconnect = () => {
+      console.log('Disconnected');
+      setIsConnected(false);
+    };
+
+    socket.on('connect', handleConnect);
+    socket.on('disconnect', handleDisconnect);
+
+    return () => {
+      socket.off('connect', handleConnect);
+      socket.off('disconnect', handleDisconnect);
+      socket.disconnect(true);
+    };
+  }, []);
+
   return (
     <BrowserRouter>
       <Routes>
@@ -38,6 +70,8 @@ function App() {
             <Route path='/eco' element={<Eco user={user} />} />
             <Route path='/zero' element={<Zero user={user} />} />
             <Route path='/calculate' element={<Calculate user={user} />} />
+            <Route path='/chatform' element={<Form user={user} username={username} setUsername={setUsername} socket={socket} />} />
+            <Route path='/chatroom' element={<Chatroom user={user} username={username} setUsername={setUsername} socket={socket} />} />
 
 
           </>
