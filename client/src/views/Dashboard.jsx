@@ -90,13 +90,13 @@ const Dashboard = () => {
                                 <div className="email">
                                     <h4>Email:</h4>
                                     <FaEnvelope className='icon' />
-                                    <p>info@example.com</p>
+                                    <p>berberiarbri@gmail.com</p>
                                 </div>
 
                                 <div className="phone">
                                     <FaPhone className='icon mt-2' />
                                     <h4>Call:</h4>
-                                    <p>+555 555 55 5555</p>
+                                    <p>+355 69 65 10 090</p>
                                 </div>
                                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47934.0659648627!2d19.776537970314195!3d41.33324177336964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1350310470fac5db%3A0x40092af10653720!2sTirana%2C%20Albania!5e0!3m2!1sen!2s!4v1707511389520!5m2!1sen!2s" frameBorder="0"
                                     style={{ border: '0', width: '100%', height: '290px' }} allowFullScreen></iframe>
